@@ -3,46 +3,23 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  background: #fff;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 40vh;
+  background-image: image-url('facebook_cover_photo_1.png');
+  background-size: 62vw,40vh;
+  background-repeat: repeat-y;
   background-position: top center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 5vh 15vw;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.service-title {
-  font-size: 8vh;
-}
-
-.service-explain {
-  font-size: 2.5vh;
-  line-height: 40px;
-}
-
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
 }
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
@@ -64,7 +41,7 @@ a {
   content: '';
   width: 70px;
   height: 4px;
-  background-color: #3ccace;
+  background-color:#e45161;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -99,7 +76,7 @@ a {
   font-size: 30px;
   text-align: center;
   line-height: 60px;
-  background-color: #3ccace;
+  background-color:#e45161;
   color: #fff;
 }
 
@@ -110,7 +87,7 @@ a {
 }
 
 .reason-list-blue-text {
-  color: #3ccace;
+  color: #e45161;
 }
 
 .reason-list-description {
@@ -124,7 +101,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  background-color: #e45161;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -180,7 +157,7 @@ a {
   content: '';
   width: 70px;
   height: 4px;
-  background-color: #3ccace;
+  background-color: #e45161;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -233,7 +210,7 @@ a {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #3ccace;
+  color: #e45161;
   font-weight: bold;
 }
 
