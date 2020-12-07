@@ -97,7 +97,7 @@ belongs_to :purchase
 ### comments
 | Column          | Type    | Options                        |
 | --------------- | ------- | ------------------------------ |
-| text            | text    |                                |
+| text            | text    | null: false                    |
 | user            |reference| null: false, foreign_key: true |
 | item            |reference| null: false, foreign_key: true |
 
