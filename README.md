@@ -1,25 +1,107 @@
-# README
+# アプリケーション名　GURUBUY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### アプリケーションの概要：ログイン機能、商品の出品、購入  
+### URL: https://gurubuy.herokuapp.com/  
+### テスト用アカウント：  
+### 利用方法：ユーザーのログイン→出品→購入者が集まる→決済完了  
 
-Things you may want to cover:
+## 目指した課題解決
+  ・より安価に商品の購入ができること  
+  ・ハンドメイド出品者に安定した収入が期待できること
 
-* Ruby version
+## 洗い出した要件
+  ・ユーザー管理機能（実装済み）  
+  ・商品出品機能  
+  ・商品共同購入機能  
+  ・商品編集機能  
+  ・商品に対してのコメント機能  
+  ・商品の検索機能  
 
-* System dependencies
+## 実装した機能についてのGIFと説明
 
-* Configuration
+## 実装予定の機能  
+  ・商品出品機能  
+  ・商品共同購入機能  
+  ・商品編集機能  
+  ・商品に対してのコメント機能  
+  ・商品の検索機能
 
-* Database creation
+## データベース設計
+### usersテーブル
+| Column            | Type   | Options     |
+| ----------------- | ------ | ----------- |
+| nickname          | string | null: false |
+| email             | string | null: false |
+| encrypted_password| string | null: false |
+| first_name        | string | null: false |
+| last_name         | string | null: false |
+| first_name_kana   | string | null: false |
+| last_name_kana    | string | null: false |
+| birth_date        | date   | null: false |
 
-* Database initialization
+#### Association
 
-* How to run the test suite
+has_many :items
+has_many :purchases
+has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### items
+| Column             | Type    | Options           |
+| ------------------ | ------- | ----------------- |
+| name               | string  | null: false       |
+| content            | text    | null: false       |
+| price              | integer | null: false       |
+| joint_buying       | integer | null: false       |
+| category_id        | integer | null: false       |
+| status_id          | integer | null: false       |
+| bear_price_id      | integer | null: false       |
+| prefecture_id      | integer | null: false       |
+| shipping_day_id    | integer | null: false       |
+| user               |reference| foreign_key: true |
 
-* ...
-）
+#### Association
+
+belongs_to :user
+has_many   :comments
+has_many   :purchase
+
+### purchases
+| Column          | Type    | Options                        |
+| --------------- | ------- | ------------------------------ |
+| user            |reference| null: false, foreign_key: true |
+| item            |reference| null: false, foreign_key: true |
+
+#### Association
+
+belongs_to :user
+belongs_to :item
+has_one    :address
+
+### addresses
+| Column          | Type    | Options                        |
+| --------------- | ------- | ------------------------------ |
+| address_code    | string  | null: false                    |
+| prefecture_id   | integer | null: false                    |
+| city            | string  | null: false  :                  |
+| address_number  | string  | null: false                    |
+| house_name      | string  |                                |
+| tel             | string  | null: false, unique: true      |
+| purchase        |reference| null:false, foreign_key: true  |
+
+#### Association
+
+belongs_to :purchase
+
+### comments
+| Column          | Type    | Options                        |
+| --------------- | ------- | ------------------------------ |
+| text            | text    | null: false                    |
+| user            |reference| null: false, foreign_key: true |
+| item            |reference| null: false, foreign_key: true |
+
+#### Association
+
+belongs_to :user
+belongs_to :item
+
