@@ -50,7 +50,7 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           商品の状態
           <span class="indispensable">必須</span>
@@ -71,12 +71,12 @@
           配送方法
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shipping_method_id, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:shipping_method_id, ShippingMethod.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefecture_id, [], :hoge, :hoge, {}, {class:"select-box", id:"item-prefecture"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
       </div>
     </div>
     <%# /配送について %>
@@ -92,7 +92,7 @@
         上限出品数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-method"}) %>
+        <%= f.collection_select(:joint_buying, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-method"}) %>
       </div>
     </div>
     <%# /購入希望者数について %>
@@ -164,7 +164,7 @@
     </ul>
     <%= link_to image_tag('facebook_cover_photo_1.png' , size: '200x70'), "/" %>
     <p class="inc">
-      ©︎Furima,Inc.
+      ©︎GURUBUY,Inc.
     </p>
   </footer>
 </div>
