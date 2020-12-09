@@ -55,9 +55,8 @@ has_many :comments
 | joint_buying       | integer | null: false       |
 | category_id        | integer | null: false       |
 | status_id          | integer | null: false       |
-| bear_price_id      | integer | null: false       |
+| shipping_method_id | integer | null: false       |
 | prefecture_id      | integer | null: false       |
-| shipping_day_id    | integer | null: false       |
 | user               |reference| foreign_key: true |
 
 #### Association
