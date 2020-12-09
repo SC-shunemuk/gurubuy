@@ -68,7 +68,7 @@
       </div>
       <div class="form">
         <div class="weight-bold-text">
-          配送料の負担
+          配送方法
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
@@ -77,14 +77,25 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-prefecture"}) %>
-        <div class="weight-bold-text">
-          発送までの日数
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
     <%# /配送について %>
+
+    <%# 購入希望者数について %>
+    <div class = "items-detail">
+      <div class = "weight-bold-text question-text">
+        <span>購入数について</span>
+         <a class="question" href="#">?</a> 
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+        上限購入数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-method"}) %>
+      </div>
+    </div>
+    <%# /購入希望者数について %>
 
     <%# 販売価格 %>
     <div class="sell-price">
@@ -148,7 +159,7 @@
   <footer class="items-sell-footer">
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
+      <li><a href="#">グルバイ利用規約</a></li>
       <li><a href="#">特定商取引に関する表記</a></li>
     </ul>
     <%= link_to image_tag('facebook_cover_photo_1.png' , size: '200x70'), "/" %>
