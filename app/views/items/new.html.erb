@@ -92,7 +92,7 @@
         上限出品数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:joint_buying, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-method"}) %>
+        <%= f.collection_select(:joint_buying, JointBuying.all, :id, :name, {}, {class:"select-box", id:"item-shipping-method"}) %>
       </div>
     </div>
     <%# /購入希望者数について %>
