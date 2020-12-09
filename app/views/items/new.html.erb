@@ -64,7 +64,8 @@
     <div class="items-detail">
       <div class="weight-bold-text question-text">
         <span>配送について</span>
-        <a class="question" href="#">?</a>
+        <div class="question" id="question">?</div>
+        <div class="tooltip" id="tooltip">※ 配送料は自身でご負担お願い致します</div>
       </div>
       <div class="form">
         <div class="weight-bold-text">
@@ -79,6 +80,7 @@
         <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
       </div>
     </div>
+
     <%# /配送について %>
 
     <%# 購入希望者数について %>
