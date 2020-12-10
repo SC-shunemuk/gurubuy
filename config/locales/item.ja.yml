@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      item:
+        image: 画像
+        name: 商品名
+        content: 説明文
+        price: 価格
+        category_id: カテゴリー
+        status_id: 商品の状態
+        joint_buying_id: 出品数
+        prefecture_id: 発送元の地域
+        shipping_method_id: 配送方法

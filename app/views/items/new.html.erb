@@ -5,11 +5,11 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with local: true do |f| %>
+    <%= form_with model: @item, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <% if @item.errors.any? %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <% end %>
 
     <%# 出品画像 %>
     <div class="img-upload">
@@ -21,7 +21,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :hoge, id:"item-image" %>
+        <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
     <%# /出品画像 %>
@@ -95,7 +95,7 @@
         上限出品数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:joint_buying, JointBuying.all, :id, :name, {}, {class:"select-box", id:"item-shipping-method"}) %>
+        <%= f.collection_select(:joint_buying_id, JointBuying.all, :id, :name, {}, {class:"select-box", id:"item-shipping-method"}) %>
       </div>
     </div>
     <%# /購入希望者数について %>
@@ -113,7 +113,7 @@
           価格
             <span class="indispensable">必須</span>
           </div>
-          <%= f.text_field :hoge, class:"select-price-box", id:"item-price", placeholder:"例）300" %>
+          <%= f.text_field :price, class:"select-price-box", id:"item-price", placeholder:"例）300" %>
         </div>
       </div>
     </div>
