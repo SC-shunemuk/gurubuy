@@ -6,6 +6,7 @@ a {
   background:#fff;
 }
 
+
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
@@ -20,6 +21,24 @@ a {
   justify-content: center;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.category-hidden {
+  font-size: 12px;
+  cursor: pointer;
+  position: absolute;
+  color: #333333;
+  margin-bottom: 130px;
+  display: none;
+  
+
+}
+
+#category-hidden li{
+  border-bottom:1px solid #333333;
+  margin-left: 130px;
+
 }
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */

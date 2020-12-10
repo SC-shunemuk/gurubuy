@@ -9,9 +9,11 @@
     </form>
   </div>
   <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-    </ul>
+    <div class='lists-left'>
+      <div class="category-list">カテゴリー
+      </div>
+ 
+    </div>
     <ul class='lists-right'>
     <% if user_signed_in?%>
     <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li> 
