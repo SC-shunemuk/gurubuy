@@ -6,4 +6,5 @@ class Item < ApplicationRecord
   belongs_to :shipping_method
   belongs_to :prefecture
   belongs_to :joint_buying
+  has_one_attached :image
 end
