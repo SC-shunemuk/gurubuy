@@ -52,7 +52,7 @@ has_many :comments
 | name               | string  | null: false       |
 | content            | text    | null: false       |
 | price              | integer | null: false       |
-| joint_buying       | integer | null: false       |
+| joint_buying_id    | integer | null: false       |
 | category_id        | integer | null: false       |
 | status_id          | integer | null: false       |
 | shipping_method_id | integer | null: false       |

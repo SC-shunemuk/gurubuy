@@ -14,8 +14,9 @@ class Item < ApplicationRecord
     validates :content, length: { maximum: 1000 }
     validates :category_id
     validates :status_id
-    validates :joint_buying
+    validates :joint_buying_id
     validates :prefecture_id
+    validates :shipping_method_id
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
                       format: { with: /\A[0-9]+\z/ }
   end
@@ -23,7 +24,8 @@ class Item < ApplicationRecord
   with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :status_id
-    validates :joint_buying
+    validates :joint_buying_id
     validates :prefecture_id
+    validates :shipping_method_id
   end
 end
