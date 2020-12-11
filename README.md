@@ -53,7 +53,6 @@ has_many :comments
 | price              | integer | null: false       |
 | joint_buying_id    | integer | null: false       |
 | category_id        | integer | null: false       |
-| status_id          | integer | null: false       |
 | shipping_method_id | integer | null: false       |
 | prefecture_id      | integer | null: false       |
 | user               |reference| foreign_key: true |
