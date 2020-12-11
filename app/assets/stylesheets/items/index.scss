@@ -5,12 +5,19 @@ a {
 .main {
   background:#fff;
 }
+.main-title {
+  color: #333333;
+  font-size: 14px;
+  margin-right: 1000px;
+  position: absolute;
+  margin-bottom: -20px;
+}
 
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  height: 40vh;
+  height: 35vh;
   background-image: image-url('facebook_cover_photo_1.png');
   background-size: 62vw,40vh;
   background-repeat: no-repeat;
