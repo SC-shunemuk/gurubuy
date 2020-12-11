@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :status
   belongs_to :category
   belongs_to :shipping_method
   belongs_to :prefecture
@@ -13,7 +12,6 @@ class Item < ApplicationRecord
     validates :name, length: { maximum: 40 }
     validates :content, length: { maximum: 1000 }
     validates :category_id
-    validates :status_id
     validates :joint_buying_id
     validates :prefecture_id
     validates :shipping_method_id
@@ -23,7 +21,6 @@ class Item < ApplicationRecord
 
   with_options numericality: { other_than: 1 } do
     validates :category_id
-    validates :status_id
     validates :joint_buying_id
     validates :prefecture_id
     validates :shipping_method_id
