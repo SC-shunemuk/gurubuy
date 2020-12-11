@@ -2,6 +2,15 @@
 
 <%# 商品の概要 %>
 <div class="item-show">
+  <ul class="show-category-hidden" id="category-hidden">
+      <li>アクセサリー</li>
+      <li>インテリア</li>
+      <li>ファッション</li>
+      <li>ベビー・キッズ</li>
+      <li>ファッション小物</li>
+      <li>雑貨</li>
+      <li>その他</li>
+  </ul>
   <div class="item-box">
     <h2 class="name">
       <%= @item.name %>
@@ -22,7 +31,7 @@
 
     <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
     <p class='or-text'>or</p>
-    <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+    <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
 
     <%else %>
     <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
@@ -72,7 +81,7 @@
 
   <div class="comment-box">
     <form>
-      <textarea class="comment-text"></textarea>
+      <textarea class="comment-text" placeholder="一緒に購入する人を集めましょう"></textarea>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
