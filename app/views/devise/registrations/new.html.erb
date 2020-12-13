@@ -8,7 +8,7 @@
     </h1>
   </div>
   <% if @user.errors.any?%>
-  <%= render "shared/error_messages", model:@user f.object %>
+  <%= render "shared/error_messages", model: f.object %>
   <% end %>
 
   <div class="form-group">
