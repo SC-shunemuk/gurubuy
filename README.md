@@ -42,6 +42,7 @@
 has_many :items
 has_many :purchases
 has_many :comments
+has_many :orders
 
 
 ### items
@@ -60,7 +61,8 @@ has_many :comments
 
 belongs_to :user
 has_many   :comments
-has_many   :purchase
+has_many   :purchases
+has_many   :orders
 
 ### purchases
 | Column          | Type    | Options                        |
@@ -72,22 +74,25 @@ has_many   :purchase
 
 belongs_to :user
 belongs_to :item
-has_one    :address
+belongs_to :order
 
-### addresses
+### orders
 | Column          | Type    | Options                        |
 | --------------- | ------- | ------------------------------ |
 | address_code    | string  | null: false                    |
 | prefecture_id   | integer | null: false                    |
-| city            | string  | null: false  :                  |
+| city            | string  | null: false                    |
 | address_number  | string  | null: false                    |
 | house_name      | string  |                                |
 | tel             | string  | null: false, unique: true      |
-| purchase        |reference| null:false, foreign_key: true  |
+| user            |reference| null: false, foreign_key: true |
+| item            |reference| null:false, foreign_key: true  |
 
 #### Association
 
-belongs_to :purchase
+belongs_to :user
+belongs_to :item
+has_one    :purchase
 
 ### comments
 | Column          | Type    | Options                        |
