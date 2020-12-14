@@ -2,12 +2,8 @@ class OrdersController < ApplicationController
   before_action :set_item, only: :index
 
   def index
-    price = @item.price
+    @price = @item.price
     @count = @item.joint_buying.id
-    @count.times do |n|
-      @price = price * 0.95
-      price = @price
-    end
   end
 
 
