@@ -1,0 +1,11 @@
+<%= render "shared/second-header" %>
+<div class="contents row">
+  <p><%= @nickname %>さんの商品一覧</p>
+  <% @items.each do |item| %>
+    <div class="content_post" style="background-image: url(<%= item.image %>);">
+      <p><%= item.content %></p>
+      <span class="name"><%= item.name %></span>
+    </div>
+  <% end %>
+</div>
+<%= render "shared/second-footer" %>
