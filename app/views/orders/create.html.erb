@@ -1,0 +1,36 @@
+<%= render "shared/second-header"%>
+
+<div class='transaction-contents'>
+  <div class='transaction-main'>
+    <h1 class='transaction-title-text'>
+      購入申込が完了いたしました。
+    </h1>
+    <%# 購入内容の表示 %>
+    <div class='buy-item-info'>
+      <%= image_tag @item.image, class: 'buy-item-img' %>
+      <div class='buy-item-right-content'>
+        <h2 class='buy-item-text'>
+          <%= @item.name %>
+        </h2>
+        <div class='buy-item-price'>
+          <p class='item-price-text'>¥ <%= @item.price %></p>
+        </div>
+        <div>
+        <%  @count.times do |i| %>
+          <div class='buy-item-price-list'>
+          ¥ <%= (@price = @price*= 0.95).to_i %>
+          （購入数<%= i + 2 %>個の場合）
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <%# /購入内容の表示 %>
+  <h3 class='transaction-title-text'>
+    <div>Twitterで購入者を募集しよう！！</div>
+    <div class="twitter-share-button"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text="＃GURUBUYでお得に購入しよう">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </h3>
+  </div>
+</div>
+<%= render "shared/second-footer"%>

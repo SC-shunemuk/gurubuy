@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
+    @price = @item.price
+    @count = @item.joint_buying.id
   end
 
   def create
@@ -9,7 +11,7 @@ class OrdersController < ApplicationController
     @count = @item.joint_buying.id
     @order = Order.new(order_params)
     if @order.save
-      redirect_to root_path
+      render :create
     else
       render :index
     end
