@@ -3,13 +3,9 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    @price = @item.price
-    @count = @item.joint_buying.id
   end
 
   def create
-    @price = @item.price
-    @count = @item.joint_buying.id
     @order = Order.new(order_params)
     if @order.save
       render :create
@@ -23,6 +19,8 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+    @price = @item.price
+    @count = @item.joint_buying.id - 1
   end
   private
 
