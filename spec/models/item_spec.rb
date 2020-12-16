@@ -43,7 +43,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('商品の状態が正しく選択されていません。')
       end
       it 'joint_buyingが未選択だと保存できない' do
-        @item.joint_buying_id = 1
+        @item.joint_buying_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('出品数が正しく選択されていません。')
       end

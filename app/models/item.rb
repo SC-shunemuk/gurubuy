@@ -22,8 +22,9 @@ class Item < ApplicationRecord
 
   with_options numericality: { other_than: 1 } do
     validates :category_id
-    validates :joint_buying_id
     validates :prefecture_id
     validates :shipping_method_id
   end
+
+  validates :joint_buying_id, numericality: { other_than: 0 }
 end
