@@ -12,7 +12,7 @@
           <%= @item.name %>
         </h2>
         <div class='buy-item-price'>
-          <p class='item-price-text'>¥<%= @price.to_i %></p>
+          <p class='item-price-text'>¥<%= @price %></p>
 
         </div>
       </div>
@@ -23,12 +23,12 @@
         支払金額
       </h1>
       <p class='item-payment-price'>
-        ¥<%= @price.to_i %>
+        ¥<%= @price %>
       </p>
     </div>
 
     <%= form_with url: item_purchases_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
-    <%#= render "shareds/error_messages", model: @purchase_form %>
+    <%= render "shared/error_messages", model: @purchase %>
     <div class='credit-card-form'>
       <h1 class='info-input-headline'>
         クレジットカード情報入力
