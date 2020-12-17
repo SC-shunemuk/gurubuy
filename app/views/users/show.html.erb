@@ -1,27 +1,46 @@
 <%= render "shared/second-header" %>
 <div class="item-contents-user">
   <p class="main-title-show"><%= @nickname %>さんの商品一覧</p>
-  <% @items.each do |item| %>
-  <li class='item-lists-show'>
-        <%= link_to item_path(item.id), method: :get do %>
-        <div class='item-img-content'>
-          <%= image_tag item.image, class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= item.name %>
-          </h3>
-          <div class='item-price'>
-            <div class='star-btn'>
+  <ul class='item-lists-show'>
+    <% @items.each do |item| %>
+    <li class='list'>
+          <%= link_to item_path(item.id), method: :get do %>
+          <div class='item-img-content'>
+            <%= image_tag item.image, class: "item-img-show" %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= item.name %>
+           </h3>
+            <div class='item-price'>
+             <div class='star-btn'>
               <span class='star-count'>残り販売数 <%= item.joint_buying_id %></span>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
+          <% end %>
+    </li>
     <% end %>
-  <p class="main-title-purchase"><%= @nickname %>さんの決済に進める申込一覧</p>
-  
+  </ul>
+</div>
+<div class="item-contents-user">
+  <p class="main-title-show"><%= @nickname %>さんの決済待ち商品</p>
+  <ul class='item-lists-show'>
+     <% @buying_items.each do | buying_item | %>
+      <li class='list'>
+          <%= link_to "#", method: :get do %>
+            <div class='item-img-content'>
+              <%= image_tag buying_item.image, class: "item-img-show" %>
+           </div>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= buying_item.name %>
+              </h3>
+            </div>
+          <% end %>
+      </li>
+      <% end %>
+  </ul>
 </div>
 <%= link_to( new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
