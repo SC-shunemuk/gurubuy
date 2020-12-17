@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      @item.decrement!(:joint_buying_id,1)
+      @item.decrement!(:joint_buying_id, 1)
       render :create
     else
       render :index
