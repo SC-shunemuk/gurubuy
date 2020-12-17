@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
+      @item.decrement!(:joint_buying_id, 1)
       render :create
     else
       render :index
@@ -26,5 +27,9 @@ class OrdersController < ApplicationController
 
   def order_params
     params.permit(:address_code, :prefecture_id, :city, :address_number, :house_name, :tel).merge(user_id: current_user.id, item_id: @item.id)
+  end
+
+  def joint_buying_params
+    params.require(:item).permit(:joint_buying_id)
   end
 end

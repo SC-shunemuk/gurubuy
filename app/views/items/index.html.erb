@@ -19,47 +19,49 @@
     <ul class='item-lists'>
 
       <% @items.each do |item| %>
-      <li class='list'>
+      <% if item.joint_buying_id != 0%>
+        <li class='list'>
         <%= link_to item_path(item.id), method: :get do %>
-        <div class='item-img-content'>
-          <%= image_tag item.image, class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= item.name %>
-          </h3>
-          <div class='item-price'>
-            <span><%= item.price %>円<br>配送料負担</span>
-            <div class='star-btn'>
-              <span class='star-count'>残り販売数 <%= item.joint_buying_id - 1 %></span>
+          <div class='item-img-content'>
+            <%= image_tag item.image, class: "item-img" %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= item.name %>
+            </h3>
+            <div class='item-price'>
+              <span><%= item.price %>円<br>配送料負担</span>
+              <div class='star-btn'>
+                <span class='star-count'>残り販売数 <%= item.joint_buying_id %></span>
+              </div>
             </div>
           </div>
-        </div>
+          <% end %>
+        </li>
         <% end %>
-      </li>
       <% end %>
-      <%#ダミー%>
+        <%#ダミー%>
       <% if @items.length == 0 %>
-      <li class='list'>
+        <li class='list'>
 
-        <%= link_to "#" do %>
-        <%= image_tag "1534828603-1.png", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            ダミー商品
-          </h3>
-          <div class='item-price'>
-            <span>------円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-              <span class='star-count'>0</span>
+          <%= link_to "#" do %>
+          <%= image_tag "1534828603-1.png", class: "item-img" %>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              ダミー商品
+            </h3>
+            <div class='item-price'>
+              <span>------円<br>(税込み)</span>
+              <div class='star-btn'>
+                <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+                <span class='star-count'>0</span>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
+          <% end %>
+        </li>
       <% end %>
-      <%# ダミー %>
+        <%# ダミー %>
     </ul>
   </div>
   <%# /商品一覧 %>
