@@ -24,11 +24,11 @@
   </ul>
 </div>
 <div class="item-contents-user">
-  <p class="main-title-show"><%= @nickname %>さんの決済待ち商品</p>
+  <p class="main-title-purchase"><%= @nickname %>さんの決済待ち商品</p>
   <ul class='item-lists-show'>
      <% @buying_items.each do | buying_item | %>
       <li class='list'>
-          <%= link_to "#", method: :get do %>
+          <%= link_to item_purchases_path(buying_item.id), method: :get do %>
             <div class='item-img-content'>
               <%= image_tag buying_item.image, class: "item-img-show" %>
            </div>
