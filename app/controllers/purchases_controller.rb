@@ -10,7 +10,7 @@ class PurchasesController < ApplicationController
     if @purchase.valid?
       pay_item
       @purchase.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render action: :index
     end
@@ -25,9 +25,11 @@ class PurchasesController < ApplicationController
     @count.times do
       @price = @price*= 0.95
     end
+    @price = @price.to_i
   end
+
   def purchase_params
-    params.require(:purchase).merge(token: params[:token])
+    params.permit().merge(user_id: current_user.id, item_id: @item.id, token: params[:token])
   end
 
   def pay_item
