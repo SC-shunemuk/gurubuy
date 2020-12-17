@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
+      @item.update_attribute(:exhibit_number,@count+1)
       @item.decrement!(:joint_buying_id, 1)
       render :create
     else
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
     @price = @item.price
-    @count = @item.joint_buying.id - 1
+    @count = @item.exhibit_number - 1
   end
   private
 

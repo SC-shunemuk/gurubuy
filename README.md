@@ -52,6 +52,7 @@ has_many :orders
 | content            | text    | null: false       |
 | price              | integer | null: false       |
 | joint_buying_id    | integer | null: false       |
+| exhibit_number     | integer |                   |
 | category_id        | integer | null: false       |
 | shipping_method_id | integer | null: false       |
 | prefecture_id      | integer | null: false       |
