@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
   end
 
   def create
+    @order = Order.find_by item_id: @item.id
     @purchase = Purchase.new(purchase_params)
     if @purchase.valid?
       pay_item
@@ -29,7 +30,7 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.permit().merge(user_id: current_user.id, item_id: @item.id, token: params[:token])
+    params.permit().merge(user_id: current_user.id, item_id: @item.id, order_id: @order.id, token: params[:token])
   end
 
   def pay_item
