@@ -26,19 +26,21 @@
 <div class="item-contents-user">
   <p class="main-title-purchase"><%= @nickname %>さんの決済待ち商品</p>
   <ul class='item-lists-show'>
-     <% @buying_items.each do | buying_item | %>
+     <% @ordered_items.each do | ordered_item | %>
+      <% unless ordered_item != @purchased_items %>
       <li class='list'>
-          <%= link_to item_purchases_path(buying_item.id), method: :get do %>
+          <%= link_to item_purchases_path(ordered_item.id), method: :get do %>
             <div class='item-img-content'>
-              <%= image_tag buying_item.image, class: "item-img-show" %>
+              <%= image_tag ordered_item.image, class: "item-img-show" %>
            </div>
             <div class='item-info'>
               <h3 class='item-name'>
-                <%= buying_item.name %>
+                <%= ordered_item.name %>
               </h3>
             </div>
           <% end %>
       </li>
+      <% end %>
       <% end %>
   </ul>
 </div>
