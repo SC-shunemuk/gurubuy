@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+lock "3.14.1"
 
-set :application, "gurubuy"
-set :repo_url, "git@github.com:SC-shunemuk/gurubuy.git"
+set :application, 'gurubuy'
+set :repo_url, 'git@github.com:SC-shunemuk/gurubuy.git'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user
