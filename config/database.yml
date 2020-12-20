@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: gurubuy_production
-  username: gurubuy
+  username: root
   password: <%= ENV['GURUBUY_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
