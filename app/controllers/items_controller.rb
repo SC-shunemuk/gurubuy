@@ -20,6 +20,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit
@@ -47,6 +49,7 @@ class ItemsController < ApplicationController
   def set_item
     @item  = Item.find(params[:id])
   end
+
 
   def item_edit_params
     params.require(:item).permit(:name, :content,:category_id, :prefecture_id, :image, :shipping_method_id).merge(user_id: current_user.id)
