@@ -16,14 +16,14 @@
           <p class='item-price-text'>¥ <%= @item.price %></p>
         </div>
         <div>
-        <% if @count >= 1 %>
+        <%# if @count >= 1 %>
           <%  @count.times do |i| %>
             <div class='buy-item-price-list'>
             ¥ <%= (@price = @price*= 0.95).to_i %>
             （  購入数<%= i + 2 %>個の場合）
             </div>
           <% end %>
-        <% end %>
+        <%# end %>
         </div>
       </div>
     </div>

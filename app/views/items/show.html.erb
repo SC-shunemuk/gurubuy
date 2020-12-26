@@ -72,9 +72,6 @@
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
         <span>お気に入り 0</span>
       </div>
-      <div class="report-btn">
-        <span>不適切な商品の通報</span>
-      </div>
     </div>
   </div>
   <%# /商品の概要 %>
@@ -95,7 +92,8 @@
       </button>
     <% end %>
     <div class="item-explain-box">
-      <span>＜     コメント一覧     ＞</span>
+      <span>＜コメント一覧＞</span>
+      <div class="comment-box">
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
@@ -103,6 +101,7 @@
           </p>
         <% end %>
       <% end %>
+      </div>
     </div>
   </div>
   <div class="links">
