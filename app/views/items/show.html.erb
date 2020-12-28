@@ -73,14 +73,14 @@
   <div class="comment-box">
     <div class="item-explain-box">
       <div class="main-comment">質問一覧</div>
-      <div class="comment-box">
-      <% if @comments %>
-        <% @comments.each do |comment| %>
-            <div class="comment-name"><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></div>
-            <div class="comment-show-text"><%= comment.text %></div>
-        <% end %>
-      <% end %>
-      </div>
+        <div class="comment-box">
+          <% if @comments %>
+            <% @comments.each do |comment| %>
+                <div class="comment-name"><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></div>
+                <div class="comment-show-text"><%= comment.text %></div>
+            <% end %>
+          <% end %>
+        </div>
     </div>
     <%= form_with(model: [@item, @comment], local: true) do |form| %>
       <%= form.text_area :text, class: "comment-text", placeholder: "一緒に購入する人を集めましょう" %>
