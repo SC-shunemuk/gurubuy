@@ -156,12 +156,17 @@
 
 
 /* /商品の概要 */
-
+.main-comment{
+  position: absolute;
+  top: 10px;
+  left: -95px;
+  font-size: 22px;
+}
 .comment-box {
   width: 40vw;
-  background-color: #fff;
-  margin: 5vh 0;
+  margin: 2vh 0;
   text-align: center;
+  position: relative;
 }
 
 .comment-text {
@@ -221,4 +226,18 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+.comment-name {
+  color:#191818;
+  font-size: 20px;
+  margin: 10px 0;
+  margin-right: 450px;
+}
+
+.comment-show-text{
+  color:#191818;
+  font-size: 15px;
+  margin-right: 550px;
+  margin-bottom: 20px;
 }

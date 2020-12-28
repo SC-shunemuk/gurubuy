@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
     @price = @item.price
-    @count = @item.exhibit_number
+    @count = @item.joint_buying_id - 1
   end
   private
 
