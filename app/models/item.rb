@@ -29,4 +29,12 @@ class Item < ApplicationRecord
   end
 
   validates :joint_buying_id, numericality: { other_than: 0 }
+
+  def self.search(search)
+    if search != ""
+      Item.where('content LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
