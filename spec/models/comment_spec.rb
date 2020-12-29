@@ -17,6 +17,16 @@ RSpec.describe Comment, type: :model do
         @comment.text = nil
         @comment.valid?
       end
+
+      it 'ユーザーが紐づいてないと投稿できない' do
+        @comment.user = nil
+        @comment.valid?
+      end
+
+      it '商品が紐づいてないと投稿できない' do
+        @comment.item = nil
+        @comment.valid?
+      end
     end
   end
 end

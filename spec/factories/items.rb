@@ -5,7 +5,6 @@ FactoryBot.define do
     content             { Faker::Lorem.sentence }
     price               { 450 }
     category_id         { 2 }
-    status_id           { 2 }
     joint_buying_id     { 2 }
     shipping_method_id  { 2 }
     prefecture_id       { 2 }
