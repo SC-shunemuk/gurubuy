@@ -10,7 +10,12 @@
   </div>
   <div class='nav'>
     <div class='lists-left'>
-      <div class="category-list" id="category-list">カテゴリー
+      <div class="category-list" id="category-list">
+        <%= search_form_for @i, url: search_category_items_path do |f| %>
+          <%= f.label :category_id_eq, 'カテゴリー'  %>
+            <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {},{class:"category-search"}) %>
+            <%= f.submit ({class:"category-search"}),'検索' %>
+        <% end %>
       </div>
  
     </div>

@@ -1,15 +1,15 @@
-<%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%= form_with(url: search_items_path, local: true, method: :get, class:"search-form") do |form| %>
-      <%=form.text_field :keyword, class:'input-box', placeholder:'キーワードから探す'%>
-      <button class="search-button">
-      <% form.submit %>
-      <%= image_tag "search.png", class:"search-icon" %>
-    <% end %>
-  </div>
   <div class='nav'>
-    <div class='lists-left'></div>
+    <div class='lists-left'>
+      <div class="category-list" id="category-list">
+        <%= search_form_for @i, url: search_category_items_path do |f| %>
+          <%= f.label :category_id_eq, 'カテゴリー'  %>
+            <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {},{class:"category-search"}) %>
+            <%= f.submit ({class:"category-search"}),'検索' %>
+        <% end %>
+      </div>
+ 
+    </div>
     <ul class='lists-right'>
     <% if user_signed_in?%>
     <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li> 
@@ -30,22 +30,22 @@
   <div class='item-contents'>
     <div class='main-title'>商品一覧</div>
     <ul class='item-lists'>
-
-      <% @items.each do |item| %>
-      <% if item.joint_buying_id != 0%>
+    <% if @results.length !=0 %>
+      <% @results.each do |result| %>
+      <% if result.joint_buying_id != 0%>
         <li class='list'>
-        <%= link_to item_path(item.id), method: :get do %>
+        <%= link_to item_path(result.id), method: :get do %>
           <div class='item-img-content'>
-            <%= image_tag item.image, class: "item-img" %>
+            <%= image_tag result.image, class: "item-img" %>
           </div>
           <div class='item-info'>
             <h3 class='item-name'>
-              <%= item.name %>
+              <%= result.name %>
             </h3>
             <div class='item-price'>
-              <span><%= item.price %>円<br>配送料負担</span>
+              <span><%= result.price %>円<br>配送料負担</span>
               <div class='star-btn'>
-                <span class='star-count'>残り販売数 <%= item.joint_buying_id %></span>
+                <span class='star-count'>残り販売数 <%= result.joint_buying_id %></span>
               </div>
             </div>
           </div>
@@ -53,6 +53,7 @@
         </li>
         <% end %>
       <% end %>
+    <% end %>
     </ul>
   </div>
   <%# /商品一覧 %>
