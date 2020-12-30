@@ -1,31 +1,8 @@
-<header class='top-page-header'>
-  <div class='nav'>
-    <div class='lists-left'>
-      <div class="category-list" id="category-list">
-        <%= search_form_for @i, url: search_category_items_path do |f| %>
-          <%= f.label :category_id_eq, 'カテゴリー'  %>
-            <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {},{class:"category-search"}) %>
-            <%= f.submit ({class:"category-search"}),'検索' %>
-        <% end %>
-      </div>
- 
-    </div>
-    <ul class='lists-right'>
-    <% if user_signed_in?%>
-    <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li> 
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    <% else  %> 
-    <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-    <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-    <% end %>
-
-    </ul>
-  </div>
-</header>
+<%= render "shared/header" %>
 <div class='main'>
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
-  <div class='title-contents'></div>
+  <%=link_to image_tag("facebook_cover_photo_1.png", class:"title-contents"), root_path %>
   <%# 商品一覧 %>
   <div class='item-contents'>
     <div class='main-title'>商品一覧</div>
