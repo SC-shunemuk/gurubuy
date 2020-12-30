@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :item_search, only:[:index, :search_category, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -44,7 +45,15 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword])
   end
+
+  def search_category
+    @results = @i.result
+  end
+
   private
+  def item_search
+    @i = Item.ransack(params[:q])
+  end
   def item_params
     params.require(:item).permit(:name, :content, :price, :joint_buying_id, :category_id, :prefecture_id, :image, :shipping_method_id, :exhibit_number).merge(user_id: current_user.id)
   end

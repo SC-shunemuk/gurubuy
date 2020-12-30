@@ -8,7 +8,7 @@ a {
 .main-title {
   color: #333333;
   font-size: 14px;
-  margin-right: 1000px;
+  margin-right: 940px;
   position: absolute;
   margin-bottom: -20px;
 }
@@ -16,34 +16,18 @@ a {
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
-  width: 100vw;
-  height: 35vh;
-  background-image: image-url('facebook_cover_photo_1.png');
-  background-size: 62vw,40vh;
-  background-repeat: no-repeat;
-  background-position: top center;
+  width: 70vw;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   color: #fff;
+  margin:auto;
   position: relative;
+  cursor: pointer;
 }
 
-.category-hidden {
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
-  position: absolute;
-  color: #333333;
-  margin-bottom: 124px;
-  margin-left: 30px;
-  display: none;
-  font-weight: bold;
-  margin-left: 150px;
-  background-color: rgb(188, 195, 239);
-  border-bottom: #333333;
-}
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
 
