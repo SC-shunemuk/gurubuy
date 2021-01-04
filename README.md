@@ -26,6 +26,7 @@
   ### トップページ（カテゴリーにて検索結果）
   ![トップページの検索結果](https://github.com/SC-shunemuk/gurubuy/blob/master/images/7dfcf5111c4fecfee0dbbfd1de67db5d.png)  
   トップページでカテゴリー検索をマスクで行った結果
+  ###
 ## 実装予定  
   ・商品の購入希望を複数出せるようにすること  
 
