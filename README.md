@@ -23,16 +23,22 @@
 # DEMO
   ### トップページ
   ![トップページ](https://github.com/SC-shunemuk/gurubuy/blob/master/images/c2a4e8f064fec562c7eb92ba789a0920.jpg)
+  
   ### トップページ（カテゴリーにて検索結果）
   ![トップページの検索結果](https://github.com/SC-shunemuk/gurubuy/blob/master/images/7dfcf5111c4fecfee0dbbfd1de67db5d.png)  
   トップページでカテゴリー検索をマスクで行った結果です。
+  
   ### 商品の詳細画面
   ![詳細画面](https://github.com/SC-shunemuk/gurubuy/blob/master/images/Animated%20GIF-downsized.gif)  
   商品の詳細画面で配達方法等が確認できて、ユーザー登録者であれば商品に対して質問が出来ます。また、出品者以外の場合は購入の画面に進むことが出来ます。
+  
   ### 商品購入画面
   ![商品購入画面](https://github.com/SC-shunemuk/gurubuy/blob/master/images/Animated%20GIF-downsized%20(1).gif)  
   購入画面で配送先を入力後、購入者を集めるためにTwitterで共有が出来ます。
+  
   ### マイページ
+  ![商品決済画面]()  
+  マイページで出品した商品と購入者が集まり決済を待っている商品が一覧で確認出来ます。また、決済待ちの商品をクリックすることでクレジット決済の画面に推移出来ます。
 
 ## 実装予定  
   ・商品の購入希望を複数出せるようにすること  

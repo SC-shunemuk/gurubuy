@@ -27,7 +27,7 @@
   <p class="main-title-purchase"><%= @nickname %>さんの決済待ち商品</p>
   <ul class='item-lists-show'>
      <% @ordered_items.each do | ordered_item | %>
-      <% unless ordered_item != @purchased_items %>
+      <% unless ordered_item == @purchased_items %>
       <li class='list'>
           <%= link_to item_purchases_path(ordered_item.id), method: :get do %>
             <div class='item-img-content'>
