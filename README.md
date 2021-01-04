@@ -26,7 +26,9 @@
   ### トップページ（カテゴリーにて検索結果）
   ![トップページの検索結果](https://github.com/SC-shunemuk/gurubuy/blob/master/images/7dfcf5111c4fecfee0dbbfd1de67db5d.png)  
   トップページでカテゴリー検索をマスクで行った結果
-  ###
+  ### 商品の詳細画面
+  ![詳細画面](https://github.com/SC-shunemuk/gurubuy/blob/master/images/08c446d6b4a47cf1bf26352b600aa8c5.mp4)
+  商品の詳細画面で配達方法等が確認できて、ユーザー登録者であれば商品に対して質問ができる。出品者以外の場合は購入の画面に進める。
 ## 実装予定  
   ・商品の購入希望を複数出せるようにすること  
 
