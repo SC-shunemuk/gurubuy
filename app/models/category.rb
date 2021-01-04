@@ -1,13 +1,14 @@
 class Category < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
-    { id: 2, name: 'アクセサリー' },
-    { id: 3, name: 'インテリア' },
-    { id: 4, name: 'ファッション' },
-    { id: 5, name: 'ベビー・キッズ' },
-    { id: 6, name: 'ファッション小物' },
-    { id: 7, name: '雑貨' },
-    { id: 8, name: 'その他' }
+    { id: 2, name: 'マスク'},
+    { id: 3, name: 'アクセサリー' },
+    { id: 4, name: 'インテリア' },
+    { id: 5, name: 'ファッション' },
+    { id: 6, name: 'ベビー・キッズ' },
+    { id: 7, name: 'ファッション小物' },
+    { id: 8, name: '雑貨' },
+    { id: 9, name: 'その他' }
 
   ]
   include ActiveHash::Associations
