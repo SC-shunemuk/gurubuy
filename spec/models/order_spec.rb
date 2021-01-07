@@ -12,7 +12,20 @@ RSpec.describe Order, type: :model do
     end
 
     context '申し込みが出来ない場合' do
-      
+      it 'ユーザーが紐づいていないと申し込みできない' do
+        @order.user = nil
+        @order.valid?
+      end
+
+      it '商品が紐づいていないと申し込みできない' do
+        @order.item = nil
+        @order.valid?
+      end
+
+      it 'address_codeが空だと申し込みできない' do
+        @order.address_code = ''
+        @order.valid?
+      end
     end
   end
 end
