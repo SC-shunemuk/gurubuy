@@ -26,6 +26,11 @@ RSpec.describe Order, type: :model do
         @order.address_code = ''
         @order.valid?
       end
+
+      it 'cityが空だと申込ができない' do
+        @order.city = ''
+        @order.valid?
+      end
     end
   end
 end
