@@ -31,6 +31,41 @@ RSpec.describe Order, type: :model do
         @order.city = ''
         @order.valid?
       end
+
+      it 'address_numberが空だと申込ができない' do
+        @order.address_number = ''
+        @order.valid?
+      end
+
+      it 'telが空だと申込ができない' do
+        @order.tel = ''
+        @order.valid?
+      end
+
+      it 'prefecture_idが未選択だと申込ができない' do
+        @order.prefecture_id = 1
+        @order.valid?
+      end
+
+      it 'address_codeが数字以外の入力をすると申込ができない' do
+        @order.address_code = 'アイウエオ'
+        @order.valid?
+      end
+
+      it 'address_codeが8桁以上の場合、申込ができない' do
+        @order.address_code = '10000000'
+        @order.valid?
+      end
+
+      it 'telが数字以外で入力された場合、申込ができない' do
+        @order.tel = 'aaaaaaa'
+        @order.valid?
+      end
+
+      it 'telが12桁以上で入力された場合、申込ができない' do
+        @order.tel = '012345678910'
+        @order.valid?
+      end
     end
   end
 end
