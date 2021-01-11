@@ -5,7 +5,9 @@
       <h2 class='footer-content-head'>GURUBUYを見る</h2>
       <ul>
         <li><%= link_to 'カテゴリー一覧', search_category_items_path, class: "footer-link" %></li>
+        <% if user_signed_in?%>
         <li><%= link_to 'マイページ', user_path(current_user.id), class: "footer-link" %></li>
+        <% end %>
       </ul>
     </div>
   </div>

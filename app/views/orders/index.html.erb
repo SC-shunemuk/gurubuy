@@ -31,6 +31,9 @@
 
 
     <%= form_with id: 'order-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <% if @item.errors.any? %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <% end %>
     
     <%# 配送先の入力 %>
     <div class='shipping-address-form'>
