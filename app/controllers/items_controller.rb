@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
   def item_search
     @i = Item.ransack(params[:q])
   end
+
   def item_params
     params.require(:item).permit(:name, :content, :price, :joint_buying_id, :category_id, :prefecture_id, :image, :shipping_method_id, :exhibit_number).merge(user_id: current_user.id)
   end
